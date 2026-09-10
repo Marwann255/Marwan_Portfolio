@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marwan Gamal | Mobile Application Developer</title>
+  <meta name="description" content="Official portfolio of Marwan Gamal, a Mobile Application Developer & Flutter Engineer based in Giza, Egypt. Specializing in high-performance iOS & Android apps with Firebase, Clean Architecture, and RESTful APIs." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Marwan Gamal | Mobile Application Developer" />
+  <meta property="og:description" content="Official portfolio of Marwan Gamal, a Mobile Application Developer & Flutter Engineer based in Giza, Egypt." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://github.com/Marwann255" />
+  <meta name="theme-color" content="#07080c" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            main: '#07080c',
+            secondary: '#0d0f17',
+            card: 'rgba(15, 18, 28, 0.75)',
+            cardHover: 'rgba(22, 27, 42, 0.9)',
+            border: 'rgba(255, 255, 255, 0.08)',
+            primary: {
+              DEFAULT: '#f43f5e',
+              dark: '#e11d48',
+              light: '#fb7185'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="bg-[#07080c] text-slate-100 min-h-screen selection:bg-rose-500/30 selection:text-rose-200 overflow-x-hidden relative">
+
+  <!-- Top Blur Ambient Header -->
+  <div class="top-blur-layer"></div>
+
+  <!-- Background Laser Beams SVG -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-40">
+    <svg class="w-full h-full" viewBox="-380 -650 1470 1530" preserveAspectRatio="none" fill="none">
+      <defs>
+        <radialGradient id="beams-radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(355 115) rotate(90) scale(765 735)">
+          <stop offset="0.06" stop-color="#f43f5e" stop-opacity="0.3"></stop>
+          <stop offset="0.3" stop-color="#e11d48" stop-opacity="0.15"></stop>
+          <stop offset="0.6" stop-color="#a855f7" stop-opacity="0.05"></stop>
+          <stop offset="1" stop-color="#000000" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="beam-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#f43f5e" stop-opacity="0"></stop>
+          <stop offset="30%" stop-color="#fb7185"></stop>
+          <stop offset="70%" stop-color="#c084fc"></stop>
+          <stop offset="100%" stop-color="#a855f7" stop-opacity="0"></stop>
+        </linearGradient>
+      </defs>
+      
+      <!-- Static Grid Beams -->
+      <path d="M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875" stroke="url(#beams-radial)" stroke-width="0.75" stroke-opacity="0.25"></path>
+      <path d="M-296 -285C-296 -285 -228 120 236 247C700 374 768 779 768 779" stroke="url(#beams-radial)" stroke-width="0.75" stroke-opacity="0.25"></path>
+      <path d="M-184 -413C-184 -413 -116 -8 348 119C812 246 880 651 880 651" stroke="url(#beams-radial)" stroke-width="0.75" stroke-opacity="0.25"></path>
+      <path d="M-72 -541C-72 -541 -4 -136 460 -9C924 118 992 523 992 523" stroke="url(#beams-radial)" stroke-width="0.75" stroke-opacity="0.25"></path>
+
+      <!-- Moving Laser Pulses -->
+      <path class="beam-path" d="M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875" stroke="url(#beam-gradient)" stroke-width="1.2" stroke-opacity="0.85"></path>
+      <path class="beam-path-delayed" d="M-184 -413C-184 -413 -116 -8 348 119C812 246 880 651 880 651" stroke="url(#beam-gradient)" stroke-width="1.2" stroke-opacity="0.85"></path>
+    </svg>
+  </div>
+
+  <!-- Floating Ambient Particles -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="particle-1 absolute w-1.5 h-1.5 rounded-full bg-rose-500/40" style="top:20%; left:15%;"></div>
+    <div class="particle-2 absolute w-2 h-2 rounded-full bg-purple-500/30" style="top:35%; right:20%;"></div>
+    <div class="particle-3 absolute w-1 h-1 rounded-full bg-rose-400/50" style="top:70%; left:25%;"></div>
+    <div class="particle-4 absolute w-2 h-2 rounded-full bg-pink-500/30" style="top:60%; right:12%;"></div>
+  </div>
+
+  <!-- FLOATING NAVIGATION BAR (awrs.me style) -->
+  <header class="fixed top-4 inset-x-0 mx-auto w-fit z-50 px-3">
+    <nav class="nav-pill flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 shadow-2xl">
+      <!-- Monogram -->
+<a href="#home" class="flex items-center justify-center w-8 h-8 rounded-full hover:scale-105 transition-transform mr-1">
+  <span class="logo-mg block w-full h-full" style="background-color: var(--accent-rose);"></span>
+</a>
+
+      <!-- Live Dynamic Greeting Chip -->
+      <div id="live-greeting" class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/5 text-xs select-none">
+        <span class="text-base">🌤️</span>
+        <span class="text-xs font-medium text-slate-300">Good Afternoon</span>
+      </div>
+
+      <!-- Links (Desktop) -->
+      <div class="hidden md:flex items-center gap-1 ml-1">
+        <a href="#home" class="nav-link active px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors">Home</a>
+        <a href="#about" class="nav-link px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors">About</a>
+        <a href="#experience" class="nav-link px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors">Experience</a>
+        <a href="#projects" class="nav-link px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors">Projects</a>
+        <a href="#skills" class="nav-link px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors">Skills</a>
+        <a href="#wall" class="nav-link px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors">The Wall</a>
+        <a href="#contact" class="nav-link px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors">Contact</a>
+      </div>
+
+      <!-- Resume Download CTA -->
+      <a href="assets/Marwan_Gamal_Resume.pdf" download="Marwan_Gamal_CV.pdf" class="flex items-center gap-1.5 ml-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white text-xs font-semibold shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 transition-all cursor-pointer">
+        <i data-lucide="file-down" class="w-3.5 h-3.5"></i>
+        <span>Resume</span>
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-slate-300 hover:text-white ml-1" aria-label="Toggle Menu">
+        <i data-lucide="menu" class="w-4 h-4"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex flex-col justify-between p-6">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-rose-500/10 border border-rose-500/20 flex items-center justify-center font-bold text-rose-400">MG</div>
+        <div id="mobile-live-greeting" class="text-xs font-medium text-slate-300">Good Afternoon</div>
+      </div>
+      <button id="mobile-menu-close" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-slate-300">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <div class="flex flex-col gap-4 my-auto">
+      <a href="#home" class="mobile-nav-link text-xl font-bold text-slate-200 hover:text-rose-400 py-2 border-b border-white/5">Home</a>
+      <a href="#about" class="mobile-nav-link text-xl font-bold text-slate-200 hover:text-rose-400 py-2 border-b border-white/5">About</a>
+      <a href="#experience" class="mobile-nav-link text-xl font-bold text-slate-200 hover:text-rose-400 py-2 border-b border-white/5">Experience</a>
+      <a href="#projects" class="mobile-nav-link text-xl font-bold text-slate-200 hover:text-rose-400 py-2 border-b border-white/5">Projects</a>
+      <a href="#skills" class="mobile-nav-link text-xl font-bold text-slate-200 hover:text-rose-400 py-2 border-b border-white/5">Skills</a>
+      <a href="#wall" class="mobile-nav-link text-xl font-bold text-slate-200 hover:text-rose-400 py-2 border-b border-white/5">The Wall</a>
+      <a href="#contact" class="mobile-nav-link text-xl font-bold text-slate-200 hover:text-rose-400 py-2 border-b border-white/5">Contact</a>
+    </div>
+
+    <div class="flex items-center justify-between gap-3 pt-4 border-t border-white/10">
+      <a href="assets/Marwan_Gamal_Resume.pdf" download class="flex-1 py-3 text-center rounded-xl bg-gradient-to-r from-rose-500 to-pink-600 text-white font-semibold text-sm">Download Resume</a>
+      <a href="https://github.com/Marwann255" target="_blank" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300"><i data-lucide="github" class="w-5 h-5"></i></a>
+      <a href="https://www.linkedin.com/in/marwan-gamal-43b8792a9/" target="_blank" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+    </div>
+  </div>
+
+  <main class="relative z-10">
+
+    <!-- 1. HERO SECTION -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center relative pt-28 pb-20 px-6 overflow-hidden">
+      
+      <div class="text-center max-w-4xl mx-auto z-10">
+        <!-- Subtitle Chip -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-mono uppercase tracking-widest mb-6">
+          <span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>
+          <span>Hi, I'm</span>
+        </div>
+
+        <!-- Hero Kinetic Name Title -->
+        <h1 class="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tight mb-6">
+          <span class="gradient-text-primary block drop-shadow-2xl">Marwan</span>
+        </h1>
+
+        <!-- Headline & Summary -->
+        <p class="text-lg sm:text-xl md:text-2xl font-semibold text-slate-200 mb-4 font-sans tracking-wide">
+          Mobile Application Developer
+        </p>
+
+        <p class="text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10 font-normal">
+          Crafting high-performance, responsive cross-platform iOS &amp; Android applications with <span class="text-rose-400 font-medium">Flutter</span>, <span class="text-rose-400 font-medium">Firebase</span>, and modern <span class="text-rose-400 font-medium">Clean Architecture</span>.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="#projects" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 hover:from-rose-600 hover:to-pink-700 text-white font-semibold text-sm shadow-xl shadow-rose-500/25 hover:scale-105 transition-all">
+            <span>Explore My Work</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+
+          <a href="#contact" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 hover:text-white font-semibold text-sm hover:scale-105 transition-all">
+            <i data-lucide="mail" class="w-4 h-4 text-rose-400"></i>
+            <span>Get In Touch</span>
+          </a>
+
+          <a href="assets/Marwan_Gamal_Resume.pdf" download="Marwan_Gamal_CV.pdf" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-transparent hover:bg-white/5 border border-white/10 text-slate-400 hover:text-slate-200 font-medium text-sm transition-all">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span>CV</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- DUAL ANGLED MARQUEE STRIPS (Signature awrs.me style) -->
+      <div class="w-full absolute bottom-4 inset-x-0 pointer-events-none overflow-hidden opacity-90">
+        <!-- Strip 1 (Reverse +3.5 deg) -->
+        <div class="marquee-strip-1 w-[140%] -left-[20%] relative py-3 bg-gradient-to-r from-rose-950 via-rose-900 to-rose-950 border-y border-rose-500/30 text-rose-200/90 shadow-lg">
+          <div class="marquee-track-reverse font-mono text-xs md:text-sm uppercase tracking-wider font-semibold">
+            <span class="flex items-center gap-6 px-4">
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <!-- <span>Flutter Specialist</span> <span class="text-rose-400">◆</span>
+              <span>Firebase &amp; Cloud NoSQL</span> <span class="text-rose-400">◆</span>
+              <span>Clean Architecture &amp; Bloc</span> <span class="text-rose-400">◆</span>
+              <span>RESTful API Integration</span> <span class="text-rose-400">◆</span>
+              <span>Cross-Platform Builder</span> <span class="text-rose-400">◆</span>
+              <span>UI/UX Enthusiast</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Flutter Specialist</span> <span class="text-rose-400">◆</span>
+              <span>Firebase &amp; Cloud NoSQL</span> <span class="text-rose-400">◆</span>
+              <span>Clean Architecture &amp; Bloc</span> <span class="text-rose-400">◆</span>
+              <span>RESTful API Integration</span> <span class="text-rose-400">◆</span>
+              <span>Cross-Platform Builder</span> <span class="text-rose-400">◆</span>
+              <span>UI/UX Enthusiast</span> <span class="text-rose-400">◆</span> -->
+            </span>
+          </div>
+        </div>
+
+        <!-- Strip 2 (Forward -3.5 deg) -->
+        <div class="marquee-strip-2 w-[140%] -left-[20%] relative py-2.5 bg-[#0e121c] border-y border-white/10 text-slate-400 mt-1 shadow-lg">
+          <div class="marquee-track font-mono text-xs uppercase tracking-wider font-medium">
+            <span class="flex items-center gap-6 px-4">
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <span>Mobile Application Developer</span> <span class="text-rose-400">◆</span>
+              <!-- <span>Problem Solver</span> <span class="text-slate-600">◆</span>
+              <span>Evently Creator</span> <span class="text-slate-600">◆</span>
+              <span>Space App Explorer</span> <span class="text-slate-600">◆</span>
+              <span>DEPI MCIT Scholar</span> <span class="text-slate-600">◆</span>
+              <span>Performance Optimizer</span> <span class="text-slate-600">◆</span>
+              <span>Responsive Mobile Design</span> <span class="text-slate-600">◆</span>
+              <span>Provider &amp; Cubit</span> <span class="text-slate-600">◆</span>
+              <span>Problem Solver</span> <span class="text-slate-600">◆</span>
+              <span>Evently Creator</span> <span class="text-slate-600">◆</span>
+              <span>Space App Explorer</span> <span class="text-slate-600">◆</span>
+              <span>DEPI MCIT Scholar</span> <span class="text-slate-600">◆</span>
+              <span>Performance Optimizer</span> <span class="text-slate-600">◆</span>
+              <span>Responsive Mobile Design</span> <span class="text-slate-600">◆</span>
+              <span>Provider &amp; Cubit</span> <span class="text-slate-600">◆</span> -->
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 2. ABOUT ME BENTO GRID SECTION -->
+    <section id="about" class="py-28 px-6 max-w-6xl mx-auto">
+      <div class="mb-14">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-8 h-[2px] bg-rose-500 rounded-full"></span>
+          <span class="text-xs font-mono uppercase tracking-widest text-rose-400 font-semibold">About Me</span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Engineering Impact Through Code</h2>
+      </div>
+
+      <!-- Bento Grid (12-column layout) -->
+      <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4">
+
+        <!-- Card 1: Avatar & Identity Card (5 cols) -->
+        <div class="spotlight-card md:col-span-6 lg:col-span-5 p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-rose-500/20 to-purple-500/20 border border-rose-500/30 flex items-center justify-center shrink-0 shadow-lg shadow-rose-500/10 p-4">
+  <span class="logo-mg block w-full h-full" style="background: linear-gradient(135deg, #fb7185 0%, #f43f5e 40%, #c084fc 80%, #a855f7 100%);"></span>
+</div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Marwan Gamal</h3>
+                <p class="text-xs font-mono text-rose-400 mt-0.5">Mobile Application Developer</p>
+                <p class="text-xs text-slate-400">Giza, Egypt 🇪🇬</p>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-4">
+              Mobile developer with strong problem-solving abilities, focused on <span class="text-white font-medium">Flutter development</span>, with hands-on experience building cross-platform applications integrating <span class="text-white font-medium">Firebase</span> and <span class="text-white font-medium">RESTful APIs</span>.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10 text-xs font-mono text-slate-400">
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Clean Code</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Agile Delivery</span>
+            <!-- <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Fast Learner</span> -->
+          </div>
+        </div>
+
+        <!-- Card 2: Timezone, User Time Detection & 3D Moving Earth Globe (4 cols) -->
+        <div class="spotlight-card md:col-span-6 lg:col-span-4 p-6 flex flex-col justify-between relative overflow-hidden group min-h-[420px]">
+          
+          <!-- Card Header & Status -->
+          <div class="relative z-10">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <div class="flex items-center gap-2">
+                <i data-lucide="globe-2" class="w-4 h-4 text-rose-400"></i>
+                <span class="text-[11px] uppercase tracking-widest font-mono text-slate-400">Timezone &amp; Location</span>
+              </div>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono font-semibold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live
+              </span>
+            </div>
+            
+            <h3 class="text-base font-bold text-white leading-snug">
+              Based in Giza, Egypt <span class="text-slate-400 font-normal">· Available Globally</span>
+            </h3>
+          </div>
+
+          <!-- Dual Live Clocks (User Local Timezone & Egypt Base) -->
+          <div class="relative z-10 grid grid-cols-2 gap-2.5 my-3">
+            <!-- User Detected Timezone Box -->
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md">
+              <div class="flex items-center justify-between text-[10px] font-mono text-rose-300 font-semibold mb-1">
+                <span class="truncate" id="user-tz-name">Your Time</span>
+                <i data-lucide="map-pin" class="w-3 h-3 text-rose-400 shrink-0"></i>
+              </div>
+              <div id="user-local-clock" class="font-mono text-sm md:text-base font-bold text-white truncate">
+                --:--:--
+              </div>
+              <div id="user-tz-offset" class="text-[10px] text-slate-400 font-mono mt-0.5 truncate">Detecting timezone...</div>
+            </div>
+
+            <!-- Egypt Time Box -->
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md">
+              <div class="flex items-center justify-between text-[10px] font-mono text-emerald-400 font-semibold mb-1">
+                <span>Giza, Egypt</span>
+                <span>🇪🇬</span>
+              </div>
+              <div id="egypt-local-clock" class="font-mono text-sm md:text-base font-bold text-white truncate">
+                --:--:--
+              </div>
+              <div class="text-[10px] text-slate-400 font-mono mt-0.5">EET · UTC+3</div>
+            </div>
+          </div>
+
+          <!-- Time Difference Badge -->
+          <div class="relative z-10 text-center mb-1">
+            <span id="tz-difference-badge" class="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-slate-300">
+              Synchronizing with your timezone...
+            </span>
+          </div>
+
+          <!-- 3D Moving / Rotating Earth Globe Canvas Container -->
+          <div class="relative w-full h-44 flex items-center justify-center overflow-hidden -mb-4">
+            <canvas id="earth-globe-canvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+
+        <!-- Card 3: Education Card (3 cols) -->
+        <div class="spotlight-card md:col-span-12 lg:col-span-3 p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-rose-400"></i>
+              <span class="text-[11px] uppercase tracking-widest font-mono text-slate-400">Education</span>
+            </div>
+            <h3 class="text-base font-bold text-white leading-tight">
+              Misr University for Science &amp; Technology (MUST)
+            </h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              B.Sc. in Computer &amp; Information Sciences (Computer Science)
+            </p>
+          </div>
+
+          <div class="mt-6 flex items-center justify-between pt-4 border-t border-white/10">
+            <span class="text-xs font-mono text-slate-400">2023 – 2027</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-semibold">Undergraduate</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Available For Work & CTA Card (Full Width 12 cols) -->
+        <div class="spotlight-card md:col-span-12 lg:col-span-12 p-7 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex items-center gap-2.5 mb-3">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <span class="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">Available For Work &amp; Freelance</span>
+            </div>
+
+            <p class="text-2xl md:text-3xl lg:text-4xl font-extrabold font-display leading-tight">
+              <span class="text-slate-400">HAVE A VISION?</span>
+              <span class="gradient-text-primary">LET'S BUILD IT</span> <span class="text-slate-300 italic font-serif">together.</span>
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 relative z-10 shrink-0">
+            <a href="assets/cv.pdf" download="Marwan_Gamal_CV.pdf" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white text-xs md:text-sm font-semibold shadow-lg shadow-rose-500/25 transition-all">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Download Resume</span>
+            </a>
+
+            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-slate-300 hover:text-white transition-colors">
+              <span>Start a conversation</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-rose-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 5: Live Stats Matrix (12 cols) -->
+        <div class="spotlight-card md:col-span-6 lg:col-span-12 p-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+            <div class="p-3 text-center">
+              <div class="text-3xl md:text-4xl font-extrabold font-display gradient-text-primary">+</div>
+              <div class="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">Apps &amp; Projects</div>
+            </div>
+            <div class="p-3 text-center">
+              <div class="text-3xl md:text-4xl font-extrabold font-display text-white">100%</div>
+              <div class="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">Cross-Platform UI</div>
+            </div>
+            <div class="p-3 text-center">
+              <div class="text-3xl md:text-4xl font-extrabold font-display text-emerald-400">15+</div>
+              <div class="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">Tech Stack Skills</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 3. EXPERIENCE & MILESTONES -->
+    <section id="experience" class="py-24 px-6 max-w-5xl mx-auto">
+      <div class="mb-14">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-8 h-[2px] bg-rose-500 rounded-full"></span>
+          <span class="text-xs font-mono uppercase tracking-widest text-rose-400 font-semibold">Journey</span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Experience &amp; Milestones</h2>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- Timeline 1: DEPI -->
+        <div class="spotlight-card p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="px-3 py-1 text-[11px] font-mono rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 font-semibold uppercase tracking-wider">Initiative Track</span>
+              <h3 class="text-xl md:text-2xl font-bold text-white mt-2">Digital Egypt Pioneers Initiative (DEPI) — Flutter Track</h3>
+              <p class="text-sm text-slate-400 font-medium">Ministry of Communications and Information Technology (MCIT)</p>
+            </div>
+            <span class="text-xs font-mono text-slate-500 shrink-0">2024 – Present</span>
+          </div>
+
+          <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
+            Selected for the prestigious nationwide technological initiative by the Egyptian Ministry of Communications. Intensive training in advanced Flutter architectures, state management with Bloc &amp; Provider, Firebase backend integration, API consumption, clean architecture principles, and agile team collaboration.
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Flutter</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Dart</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Bloc / Cubit</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Clean Architecture</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Firebase</span>
+          </div>
+        </div>
+
+        <!-- Timeline 2: Independent Developer -->
+        <div class="spotlight-card p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="px-3 py-1 text-[11px] font-mono rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 font-semibold uppercase tracking-wider">Independent Engineering</span>
+              <h3 class="text-xl md:text-2xl font-bold text-white mt-2">Mobile Application Developer &amp; Open Source Contributor</h3>
+              <p class="text-sm text-slate-400 font-medium">Self-Employed &amp; GitHub</p>
+            </div>
+            <span class="text-xs font-mono text-slate-500 shrink-0">2024 – Present</span>
+          </div>
+
+          <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
+            Engineered cross-platform mobile products including Evently (event booking &amp; discovery platform), Space App (astrophysics explorer), and ToDo App with Python FastAPI backend services. Designed responsive Material &amp; Cupertino UI layouts, implemented offline caching, and published documented repositories on GitHub.
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">FastAPI</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Provider</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">REST APIs</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Firestore</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">UI/UX</span>
+          </div>
+        </div>
+
+        <!-- Timeline 3: MUST University -->
+        <div class="spotlight-card p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="px-3 py-1 text-[11px] font-mono rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-semibold uppercase tracking-wider">Academic Education</span>
+              <h3 class="text-xl md:text-2xl font-bold text-white mt-2">Computer Science Undergraduate</h3>
+              <p class="text-sm text-slate-400 font-medium">Misr University for Science and Technology (MUST)</p>
+            </div>
+            <span class="text-xs font-mono text-slate-500 shrink-0">2023 – Expected 2027</span>
+          </div>
+
+          <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
+            Rigorous academic grounding in Algorithms &amp; Data Structures, Object-Oriented Programming (OOP), Database Systems (SQL &amp; NoSQL), Operating Systems, and Software Engineering methodologies.
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Algorithms</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Data Structures</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">OOP</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-white/5 border border-white/10 text-slate-300">Database Design</span>
+          </div>
+        </div>
+
+      </div>
+    </section> 
+
+
+    <!-- 4. SKILLS SECTION -->
+    <section id="skills" class="py-24 px-6 max-w-6xl mx-auto">
+      <div class="mb-14">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-8 h-[2px] bg-rose-500 rounded-full"></span>
+          <span class="text-xs font-mono uppercase tracking-widest text-rose-400 font-semibold">Capabilities</span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Technical Arsenal</h2>
+        <p class="text-sm text-slate-400 mt-2">The technologies, frameworks, and architecture tools I utilize every day.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Mobile & Cross Platform -->
+        <div class="spotlight-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+              <i data-lucide="smartphone" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white">Mobile Engineering</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Flutter</span>
+              <span class="text-xs font-mono text-rose-400">Specialist</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Dart</span>
+              <span class="text-xs font-mono text-rose-400">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Android SDK (Kotlin/Java)</span>
+              <span class="text-xs font-mono text-slate-400">Core</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Responsive UI / UX</span>
+              <span class="text-xs font-mono text-emerald-400">Pixel-Perfect</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- State Management & Architecture -->
+        <div class="spotlight-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white">Architecture &amp; State</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Provider</span>
+              <span class="text-xs font-mono text-purple-400">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Bloc / Cubit</span>
+              <span class="text-xs font-mono text-purple-400">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Clean Architecture &amp; MVVM</span>
+              <span class="text-xs font-mono text-emerald-400">Pattern</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Repository Pattern</span>
+              <span class="text-xs font-mono text-slate-400">Standard</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend & Cloud Services -->
+        <div class="spotlight-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <i data-lucide="server" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white">Backend &amp; Cloud</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Firebase Auth &amp; Firestore</span>
+              <span class="text-xs font-mono text-emerald-400">Real-time NoSQL</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Python FastAPI</span>
+              <span class="text-xs font-mono text-emerald-400">REST Services</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">RESTful APIs &amp; JSON</span>
+              <span class="text-xs font-mono text-slate-400">Integration</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-sm font-medium text-slate-200">Cloud Storage &amp; Functions</span>
+              <span class="text-xs font-mono text-slate-400">Cloud</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="spotlight-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white">Languages</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Dart</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Python</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">C++</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Java</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">JavaScript</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">SQL</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <!-- Tools & DevOps -->
+        <div class="spotlight-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <i data-lucide="git-branch" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white">DevOps &amp; Workflow</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Git &amp; GitHub</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">GitLab</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Postman</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Android Studio</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">VS Code</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Figma</span>
+          </div>
+        </div>
+
+        <!-- Problem Solving & Soft Skills -->
+        <div class="spotlight-card p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+              <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white">Problem Solving</h3>
+          </div>
+          <div class="space-y-2 text-xs text-slate-300">
+            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Algorithmic thinking &amp; optimization</p>
+            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Effective async &amp; memory management</p>
+            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Clear technical documentation</p>
+            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Collaborative team communication</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 5. FEATURED PROJECTS SHOWCASE -->
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-8 h-[2px] bg-rose-500 rounded-full"></span>
+            <span class="text-xs font-mono uppercase tracking-widest text-rose-400 font-semibold">Featured Work</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Shipped Projects</h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-white/5 border border-white/10 w-fit">
+          <button class="filter-btn active px-4 py-1.5 rounded-xl text-xs font-medium text-white bg-rose-500/20 border border-rose-500/40 transition-all cursor-pointer" data-filter="all">All</button>
+          <button class="filter-btn px-4 py-1.5 rounded-xl text-xs font-medium text-slate-400 border border-white/10 transition-all cursor-pointer hover:text-white" data-filter="mobile">Mobile</button>
+          <button class="filter-btn px-4 py-1.5 rounded-xl text-xs font-medium text-slate-400 border border-white/10 transition-all cursor-pointer hover:text-white" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn px-4 py-1.5 rounded-xl text-xs font-medium text-slate-400 border border-white/10 transition-all cursor-pointer hover:text-white" data-filter="space">Space / AI</button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid (2x2 Balanced Grid) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Project 1: Evently -->
+        <div class="project-item spotlight-card p-6 md:p-7 flex flex-col justify-between" data-category="mobile fullstack">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
+              <span class="text-rose-400 font-semibold">01 · Multiplatform Platform</span>
+              <span>Q3 2026</span>
+            </div>
+
+            <div class="h-44 rounded-2xl bg-gradient-to-tr from-rose-950/40 to-purple-950/40 border border-white/5 relative overflow-hidden mb-5 group">
+              <img src="assets/images/evently/evently-project-cover-16x9.png" class="w-full h-full object-cover" alt="Evently cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+              <div class="absolute inset-0 bg-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute bottom-3 left-3 flex items-center gap-2 z-10">
+                <div class="w-9 h-9 rounded-xl bg-rose-500/20 backdrop-blur-sm border border-rose-500/30 flex items-center justify-center text-rose-400 shadow-lg shadow-rose-500/10">
+                  <i data-lucide="calendar" class="w-4.5 h-4.5"></i>
+                </div>
+                <span class="font-display font-bold text-white text-base tracking-wide drop-shadow-lg">Evently</span>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Evently — Event Gathering Platform</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Comprehensive event booking &amp; discovery platform with Firebase, Google Maps, Dark/Light mode, category filtering, and bilingual localization (EN/AR).
+            </p>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-rose-500/10 text-rose-300 border border-rose-500/20">Flutter</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Firebase</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Provider</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Maps API</span>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-white/10">
+              <button onclick="openProjectModal('evently')" class="text-xs font-semibold text-rose-400 hover:text-rose-300 flex items-center gap-1 cursor-pointer">
+                <span>View Details &amp; Architecture</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+              <a href="https://github.com/Marwann255/news" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="GitHub Repo">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.67 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.4-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/>
+  </svg>
+</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Space App -->
+        <div class="project-item spotlight-card p-6 md:p-7 flex flex-col justify-between" data-category="mobile space">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
+              <span class="text-purple-400 font-semibold">02 · Astrophysics App</span>
+              <span>Q2 2026</span>
+            </div>
+
+            <!-- <div class="h-44 rounded-2xl bg-gradient-to-tr from-purple-950/40 to-indigo-950/40 border border-white/5 flex items-center justify-center relative overflow-hidden mb-5 group"> -->
+              <div class="h-44 rounded-2xl bg-gradient-to-tr from-rose-950/40 to-purple-950/40 border border-white/5 relative overflow-hidden mb-5 group">
+              <img src="assets/images/space_app/explore-universe-project-cover-16x9.png" class="w-full h-full object-cover" alt="Evently cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+              <div class="absolute inset-0 bg-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute bottom-3 left-3 flex items-center gap-2 z-10">
+                <div class="w-9 h-9 rounded-xl bg-rose-500/20 backdrop-blur-sm border border-rose-500/30 flex items-center justify-center text-rose-400 shadow-lg shadow-rose-500/10">
+                  <i data-lucide="calendar" class="w-4.5 h-4.5"></i>
+                </div>
+                <span class="font-display font-bold text-white text-xl tracking-wide">Space App</span>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Space App — Planetary Explorer</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Interactive Solar System Explorer with animated swipeable 3D planet carousel, live astronomical physics metrics (mass, gravity, orbital period), and custom native splash.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20">Flutter</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Animations</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">NASA Data</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Named Routes</span>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-white/10">
+              <button onclick="openProjectModal('space')" class="text-xs font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1 cursor-pointer">
+                <span>View Details &amp; Architecture</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+             <a href="https://github.com/Marwann255/news" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="GitHub Repo">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.67 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.4-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/>
+  </svg>
+</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: News C19 -->
+        <div class="project-item spotlight-card p-6 md:p-7 flex flex-col justify-between" data-category="mobile">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
+              <span class="text-pink-400 font-semibold">03 · News Aggregator</span>
+              <span>Q1 2026</span>
+            </div>
+
+            <div class="h-44 rounded-2xl bg-gradient-to-tr from-rose-950/40 to-purple-950/40 border border-white/5 relative overflow-hidden mb-5 group">
+              <img src="assets/images/news/news-app-project-cover-16x9.png" class="w-full h-full object-cover" alt="Evently cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+              <div class="absolute inset-0 bg-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute bottom-3 left-3 flex items-center gap-2 z-10">
+                <div class="w-9 h-9 rounded-xl bg-rose-500/20 backdrop-blur-sm border border-rose-500/30 flex items-center justify-center text-rose-400 shadow-lg shadow-rose-500/10">
+                  <i data-lucide="calendar" class="w-4.5 h-4.5"></i>
+                </div>
+                <span class="font-display font-bold text-white text-xl tracking-wide">News</span>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">News — Aggregator</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Modern news reader built with Clean Architecture, category-based live feeds (Tech, Sports, Health, Business), search, and offline article bookmarking.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-pink-500/10 text-pink-300 border border-pink-500/20">Flutter</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">REST API</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Clean Arch</span>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-white/10">
+              <button onclick="openProjectModal('news')" class="text-xs font-semibold text-pink-400 hover:text-pink-300 flex items-center gap-1 cursor-pointer">
+                <span>View Details &amp; Architecture</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+              <a href="https://github.com/Marwann255/news" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="GitHub Repo">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.67 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.4-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/>
+  </svg>
+</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Jacked Fitness Tracker -->
+        <!-- <div class="project-item spotlight-card p-6 md:p-7 flex flex-col justify-between" data-category="mobile">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
+              <span class="text-amber-400 font-semibold">04 · Health &amp; Fitness</span>
+              <span>Q4 2025</span>
+            </div>
+
+            <div class="h-44 rounded-2xl bg-gradient-to-tr from-amber-950/40 to-red-950/40 border border-white/5 flex items-center justify-center relative overflow-hidden mb-5 group">
+              <div class="absolute inset-0 bg-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div class="text-center z-10">
+                <div class="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center mx-auto mb-2 text-amber-400 font-bold text-xl shadow-lg shadow-amber-500/10">
+                  <i data-lucide="dumbbell" class="w-7 h-7"></i>
+                </div>
+                <span class="font-display font-bold text-white text-xl tracking-wide">Jacked</span>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Jacked — Workout Tracker</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Dedicated bodybuilding and fitness tracking application for routine creation, muscle group targeted logs, set &amp; rep tracking, and historical performance charts.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/20">Flutter</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Hive DB</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Charts</span>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-white/10">
+              <button onclick="openProjectModal('jacked')" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
+                <span>View Details &amp; Architecture</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+              <a href="https://github.com/Marwann255" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="GitHub Repo">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div> -->
+    </section>
+
+
+    <!-- 6. INTERACTIVE VISITOR WALL (The Wall) -->
+    <section id="wall" class="py-24 px-6 max-w-6xl mx-auto">
+      <div class="mb-14 text-center max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-mono uppercase tracking-widest mb-3">
+          <i data-lucide="message-square-plus" class="w-3.5 h-3.5"></i>
+          <span>Interactive Wall</span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-bold font-display text-white">The Visitor Wall</h2>
+        <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+          Wanna leave your mark? Pin a message, feedback, or greeting on the visitor board!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Wall Form (4 cols) -->
+        <div class="spotlight-card p-6 lg:col-span-4">
+          <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <i data-lucide="pin" class="w-4 h-4 text-rose-400"></i> Pin a Message
+          </h3>
+
+          <form id="wall-note-form" class="space-y-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5" for="wall-name">Your Name</label>
+              <input type="text" id="wall-name" required placeholder="e.g. Sara Tech" class="w-full px-3.5 py-2.5 rounded-xl glass-input text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5" for="wall-role">Role / Company</label>
+              <input type="text" id="wall-role" placeholder="e.g. Mobile Developer" class="w-full px-3.5 py-2.5 rounded-xl glass-input text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5" for="wall-emoji">Badge Emoji</label>
+              <select id="wall-emoji" class="w-full px-3.5 py-2.5 rounded-xl glass-input text-sm">
+                <option value="🚀">🚀 Fast &amp; Modern</option>
+                <option value="🔥">🔥 Awesome Project</option>
+                <option value="⭐">⭐ Top Talent</option>
+                <option value="💡">💡 Innovation</option>
+                <option value="💙">💙 Flutter</option>
+                <option value="💬">💬 Greeting</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5" for="wall-message">Message</label>
+              <textarea id="wall-message" required rows="3" placeholder="Leave your greeting or review..." class="w-full px-3.5 py-2.5 rounded-xl glass-input text-sm resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-semibold text-sm shadow-lg shadow-rose-500/25 transition-all cursor-pointer">
+              Pin to The Wall
+            </button>
+          </form>
+        </div>
+
+        <!-- Wall Pinned Notes Container (8 cols) -->
+        <div class="lg:col-span-8">
+          <div id="wall-notes-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 7. CONTACT & GET IN TOUCH -->
+    <section id="contact" class="py-24 px-6 max-w-5xl mx-auto">
+      <div class="spotlight-card p-8 md:p-12 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-mono uppercase tracking-widest text-rose-400 font-semibold block mb-2">Ready to Connect?</span>
+          <h2 class="text-3xl md:text-5xl font-extrabold font-display text-white">
+            Let's Build Something Real.
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base mt-3">
+            Open to full-time roles, freelance projects, and exciting product collaborations globally.
+          </p>
+        </div>
+
+        <!-- Quick Contacts Pills -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
+          
+          <!-- Email -->
+          <button onclick="copyToClipboard('marwangamal931@gmail.com', 'Email Address')" class="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-left transition-all group cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <i data-lucide="mail" class="w-5 h-5 text-rose-400 group-hover:scale-110 transition-transform"></i>
+              <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300"></i>
+            </div>
+            <div class="text-xs font-bold text-white truncate">marwangamal931@gmail.com</div>
+            <div class="text-[10px] font-mono text-slate-400 mt-0.5">Click to copy</div>
+          </button>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/marwan-gamal-43b8792a9/" target="_blank" class="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-left transition-all group">
+            <div class="flex items-center justify-between mb-2">
+<!-- was: <i data-lucide="linkedin" class="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform"></i> -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform">
+  <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.11 20.45H3.56V9h3.55v11.45Z"/>
+</svg>
+            </div>
+            <div class="text-xs font-bold text-white">LinkedIn</div>
+            <div class="text-[10px] font-mono text-slate-400 mt-0.5">/in/marwan-gamal</div>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/Marwann255" target="_blank" class="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-left transition-all group">
+            <div class="flex items-center justify-between mb-2">
+              <!-- was: <i data-lucide="github" class="w-5 h-5 text-purple-400 group-hover:scale-110 transition-transform"></i> -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-purple-400 group-hover:scale-110 transition-transform">
+  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.67 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.4-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/>
+</svg>
+
+
+            </div>
+            <div class="text-xs font-bold text-white">GitHub</div>
+            <div class="text-[10px] font-mono text-slate-400 mt-0.5">@Marwann255</div>
+          </a>
+
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contact-form" class="max-w-2xl mx-auto space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5" for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" required placeholder="Marwan" class="w-full px-4 py-3 rounded-xl glass-input text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5" for="contact-email">Your Email</label>
+              <input type="email" id="contact-email" required placeholder="marwan@company.com" class="w-full px-4 py-3 rounded-xl glass-input text-sm" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5" for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" placeholder="Project collaboration / Hiring inquiry" class="w-full px-4 py-3 rounded-xl glass-input text-sm" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5" for="contact-message">Message</label>
+            <textarea id="contact-message" required rows="4" placeholder="Tell me about your project or opportunity..." class="w-full px-4 py-3 rounded-xl glass-input text-sm resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 hover:from-rose-600 hover:to-pink-700 text-white font-semibold text-sm shadow-xl shadow-rose-500/25 transition-all cursor-pointer">
+            Send Message via Email
+          </button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-white/10 relative z-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-300 font-display text-sm">Marwan Gamal</span>
+        <span>© 2026. All rights reserved.</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#home" class="hover:text-slate-300 transition-colors">Home</a>
+        <a href="#about" class="hover:text-slate-300 transition-colors">About</a>
+        <a href="#projects" class="hover:text-slate-300 transition-colors">Projects</a>
+        <a href="#wall" class="hover:text-slate-300 transition-colors">The Wall</a>
+        <a href="#contact" class="hover:text-slate-300 transition-colors">Contact</a>
+      </div>
+
+      <a href="#home" class="hover:text-rose-400 flex items-center gap-1 transition-colors">
+        <span>Back to Top</span>
+        <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </footer>
+
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div id="project-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md items-center justify-center p-4 md:p-6">
+    <div class="spotlight-card w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 md:p-8 relative">
+      <div id="project-modal-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-2xl bg-slate-900/95 border border-rose-500/40 text-white text-xs font-semibold shadow-2xl backdrop-blur-xl opacity-0 translate-y-5 pointer-events-none transition-all duration-300 flex items-center gap-2">
+    <span>Notification</span>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/app.js"></script>
+</body>
+</html>
