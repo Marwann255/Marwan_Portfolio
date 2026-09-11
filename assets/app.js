@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initSpotlightEffect();
   initNavScroll();
   initProjectFilters();
-  initVisitorWall();
+  // initVisitorWall();
   initContactForm();
   initMobileMenu();
   initPageByPageScroll();
@@ -761,7 +761,7 @@ window.closeProjectModal = function() {
 };
 
 // 7. Interactive Visitor Wall
-var defaultWallNotes = [
+// var defaultWallNotes = [
   // {
   //   name: 'Ahmed Nabil',
   //   role: 'Senior Flutter Engineer',
@@ -769,13 +769,13 @@ var defaultWallNotes = [
   //   text: 'Marwan is an exceptionally dedicated Flutter developer! His clean architecture and state management in Evently were top notch.',
   //   date: 'Aug 2026'
   // },
-  {
-    name: 'Marwan Gamal',
-    role: '',
-    emoji: '⭐',
-    text: 'Leave something good',
-    date: 'Aug 2026'
-  },
+  // {
+  //   name: 'Marwan Gamal',
+  //   role: '',
+  //   emoji: '⭐',
+  //   text: 'Leave something good',
+  //   date: 'Aug 2026'
+  // },
   // {
   //   name: 'Mohamed Osama',
   //   role: 'Full-Stack Developer',
@@ -783,100 +783,245 @@ var defaultWallNotes = [
   //   text: 'Loved collaborating on mobile modules. Solid Git workflow and reliable team player!',
   //   date: 'Jul 2026'
   // }
-];
+// ];
 
-function initVisitorWall() {
-  var wallContainer = document.getElementById('wall-notes-container');
-  var form = document.getElementById('wall-note-form');
+// function initVisitorWall() {
+//   var wallContainer = document.getElementById('wall-notes-container');
+//   var form = document.getElementById('wall-note-form');
 
-  var notes = [];
-  try {
-    var saved = localStorage.getItem('marwan_wall_notes');
-    if (saved) {
-      notes = JSON.parse(saved);
-    } else {
-      notes = defaultWallNotes;
-      localStorage.setItem('marwan_wall_notes', JSON.stringify(notes));
-    }
-  } catch (e) {
-    notes = defaultWallNotes;
-  }
+//   var notes = [];
+//   try {
+//     var saved = localStorage.getItem('marwan_wall_notes');
+//     if (saved) {
+//       notes = JSON.parse(saved);
+//     } else {
+//       notes = defaultWallNotes;
+//       localStorage.setItem('marwan_wall_notes', JSON.stringify(notes));
+//     }
+//   } catch (e) {
+//     notes = defaultWallNotes;
+//   }
 
-  function renderNotes() {
-    if (!wallContainer) return;
-    var html = '';
-    notes.forEach(function(n) {
-      html += 
-        '<div class="spotlight-card p-5 rounded-2xl flex flex-col justify-between hover:border-rose-500/30 transition-all">' +
-          '<div class="flex items-start justify-between gap-3 mb-3">' +
-            '<div class="flex items-center gap-2.5">' +
-              '<div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-lg shrink-0">' +
-                (n.emoji || '💬') +
-              '</div>' +
-              '<div>' +
-                '<h5 class="text-sm font-bold text-white">' + escapeHtml(n.name) + '</h5>' +
-                '<p class="text-[11px] text-slate-400">' + escapeHtml(n.role || 'Visitor') + '</p>' +
-              '</div>' +
-            '</div>' +
-            '<span class="text-[10px] font-mono text-slate-500">' + (n.date || 'Recent') + '</span>' +
-          '</div>' +
-          '<p class="text-sm text-slate-300 leading-relaxed italic">“' + escapeHtml(n.text) + '”</p>' +
-        '</div>';
-    });
-    wallContainer.innerHTML = html;
-    initSpotlightEffect();
-  }
+//   function renderNotes() {
+//     if (!wallContainer) return;
+//     var html = '';
+//     notes.forEach(function(n) {
+//       html += 
+//         '<div class="spotlight-card p-5 rounded-2xl flex flex-col justify-between hover:border-rose-500/30 transition-all">' +
+//           '<div class="flex items-start justify-between gap-3 mb-3">' +
+//             '<div class="flex items-center gap-2.5">' +
+//               '<div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-lg shrink-0">' +
+//                 (n.emoji || '💬') +
+//               '</div>' +
+//               '<div>' +
+//                 '<h5 class="text-sm font-bold text-white">' + escapeHtml(n.name) + '</h5>' +
+//                 '<p class="text-[11px] text-slate-400">' + escapeHtml(n.role || 'Visitor') + '</p>' +
+//               '</div>' +
+//             '</div>' +
+//             '<span class="text-[10px] font-mono text-slate-500">' + (n.date || 'Recent') + '</span>' +
+//           '</div>' +
+//           '<p class="text-sm text-slate-300 leading-relaxed italic">“' + escapeHtml(n.text) + '”</p>' +
+//         '</div>';
+//     });
+//     wallContainer.innerHTML = html;
+//     initSpotlightEffect();
+//   }
 
-  renderNotes();
+//   renderNotes();
 
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var name = document.getElementById('wall-name').value.trim();
-      var role = document.getElementById('wall-role').value.trim();
-      var text = document.getElementById('wall-message').value.trim();
-      var emoji = document.getElementById('wall-emoji').value || '💬';
+//   if (form) {
+//     form.addEventListener('submit', function(e) {
+//       e.preventDefault();
+//       var name = document.getElementById('wall-name').value.trim();
+//       var role = document.getElementById('wall-role').value.trim();
+//       var text = document.getElementById('wall-message').value.trim();
+//       var emoji = document.getElementById('wall-emoji').value || '💬';
 
-      if (!name || !text) return;
+//       if (!name || !text) return;
 
-      var newNote = {
-        name: name,
-        role: role || 'Tech Visitor',
-        text: text,
-        emoji: emoji,
-        date: 'Just now'
-      };
+//       var newNote = {
+//         name: name,
+//         role: role || 'Tech Visitor',
+//         text: text,
+//         emoji: emoji,
+//         date: 'Just now'
+//       };
 
-      notes.unshift(newNote);
-      try {
-        localStorage.setItem('marwan_wall_notes', JSON.stringify(notes));
-      } catch (err) {}
+//       notes.unshift(newNote);
+//       try {
+//         localStorage.setItem('marwan_wall_notes', JSON.stringify(notes));
+//       } catch (err) {}
 
-      renderNotes();
-      form.reset();
-      showToast('🎉 Note pinned to the wall successfully!');
-    });
-  }
-}
+//       renderNotes();
+//       form.reset();
+//       showToast('🎉 Note pinned to the wall successfully!');
+//     });
+//   }
+// }
+
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+// import {
+//   getFirestore, collection, addDoc, query, orderBy, limit, onSnapshot,
+//   serverTimestamp
+// } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+//   const firebaseConfig = {
+//     apiKey: "AIzaSyA6dmRrCcRVRNO3a6uSHJra707IGf6_Q6U",
+//     authDomain: "marwan-portfolio-1be2a.firebaseapp.com",
+//     projectId: "marwan-portfolio-1be2a",
+//     storageBucket: "marwan-portfolio-1be2a.firebasestorage.app",
+//     messagingSenderId: "785435653814",
+//     appId: "1:785435653814:web:50de6142c242a9220a1817"
+//   };
+
+// const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
+// const wallRef = collection(db, "wall");
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   var wallContainer = document.getElementById("wall-notes-container");
+//   var form = document.getElementById("wall-note-form");
+//   var notes = [];
+
+//   // reuse app.js's existing helpers (they're globals since app.js is a classic script)
+//   var escapeHtml = window.escapeHtml;
+//   var initSpotlightEffect = window.initSpotlightEffect;
+
+//   function renderNotes() {
+//     if (!wallContainer) return;
+//     var html = '';
+//     notes.forEach(function(n) {
+//       html +=
+//         '<div class="spotlight-card p-5 rounded-2xl flex flex-col justify-between hover:border-rose-500/30 transition-all">' +
+//           '<div class="flex items-start justify-between gap-3 mb-3">' +
+//             '<div class="flex items-center gap-2.5">' +
+//               '<div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-lg shrink-0">' +
+//                 (n.emoji || '💬') +
+//               '</div>' +
+//               '<div>' +
+//                 '<h5 class="text-sm font-bold text-white">' + escapeHtml(n.name) + '</h5>' +
+//                 '<p class="text-[11px] text-slate-400">' + escapeHtml(n.role || 'Visitor') + '</p>' +
+//               '</div>' +
+//             '</div>' +
+//             '<span class="text-[10px] font-mono text-slate-500">' + (n.date || 'Recent') + '</span>' +
+//           '</div>' +
+//           '<p class="text-sm text-slate-300 leading-relaxed italic">“' + escapeHtml(n.text) + '”</p>' +
+//         '</div>';
+//     });
+//     wallContainer.innerHTML = html;
+//     if (initSpotlightEffect) initSpotlightEffect();
+//   }
+
+//   function formatDate(timestamp) {
+//     if (!timestamp) return "Just now";
+//     var d = timestamp.toDate();
+//     return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+//   }
+
+//   // Live sync from Firestore
+//   var q = query(wallRef, orderBy("createdAt", "desc"), limit(50));
+//   onSnapshot(q, function (snapshot) {
+//     notes = snapshot.docs.map(function (doc) {
+//       var data = doc.data();
+//       return {
+//         name: data.name,
+//         role: data.role,
+//         emoji: data.emoji,
+//         text: data.message,
+//         date: formatDate(data.createdAt)
+//       };
+//     });
+//     renderNotes();
+//   });
+
+//   // Submit a new pin
+//   if (form) {
+//     form.addEventListener("submit", async function (e) {
+//       e.preventDefault();
+
+//       var honeypot = document.getElementById("wall-honeypot");
+//       if (honeypot && honeypot.value) return; // bot filled hidden field
+
+//       var name = document.getElementById("wall-name").value.trim();
+//       var role = document.getElementById("wall-role").value.trim();
+//       var emoji = document.getElementById("wall-emoji").value;
+//       var message = document.getElementById("wall-message").value.trim();
+
+//       if (!name || !message) return;
+
+//       var submitBtn = form.querySelector("button[type='submit']");
+//       submitBtn.disabled = true;
+//       submitBtn.textContent = "Pinning...";
+
+//       try {
+//         await addDoc(wallRef, {
+//           name: name.slice(0, 50),
+//           role: role.slice(0, 60),
+//           emoji: emoji,
+//           message: message.slice(0, 300),
+//           createdAt: serverTimestamp()
+//         });
+//         form.reset();
+//         if (window.showToast) window.showToast('🎉 Note pinned to the wall successfully!');
+//       } catch (err) {
+//         console.error("Error pinning message:", err);
+//       } finally {
+//         submitBtn.disabled = false;
+//         submitBtn.textContent = "Pin to The Wall";
+//       }
+//     });
+//   }
+// });
 
 // 8. Contact Form & Clipboard helpers
+// 8. Contact Form (EmailJS)
 function initContactForm() {
   var form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var name = document.getElementById('contact-name').value.trim();
-      var email = document.getElementById('contact-email').value.trim();
-      var subject = document.getElementById('contact-subject').value.trim() || 'Portfolio Inquiry';
-      var message = document.getElementById('contact-message').value.trim();
+  if (!form) return;
 
-      var mailtoUrl = 'mailto:marwangamal931@gmail.com?subject=' + encodeURIComponent(subject + ' - ' + name) + '&body=' + encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
-      window.location.href = mailtoUrl;
-
-      showToast('📬 Email client opened! Looking forward to connecting with you.');
-      form.reset();
-    });
+  if (window.emailjs) {
+    emailjs.init('GwxB8qLmecgSOPgxi');
   }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var name = document.getElementById('contact-name').value.trim();
+    var email = document.getElementById('contact-email').value.trim();
+    var subject = document.getElementById('contact-subject').value.trim() || 'Portfolio Inquiry';
+    var message = document.getElementById('contact-message').value.trim();
+
+    if (!name || !email || !message) return;
+
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    var templateParams = {
+      from_name: name,
+      from_email: email,
+      subject: subject,
+      message: message
+    };
+
+    Promise.all([
+      emailjs.send('service_ddkbp0v', 'template_kk93w52', templateParams),
+      emailjs.send('service_ddkbp0v', 'template_4ilrunc', templateParams)
+    ])
+      .then(function() {
+        showToast('📬 Message sent! I\'ll get back to you soon.');
+        form.reset();
+      })
+      .catch(function(err) {
+        console.error('EmailJS error:', err);
+        showToast('⚠️ Something went wrong. Please try emailing me directly.');
+      })
+      .finally(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      });
+  });
 }
 
 window.copyToClipboard = function(text, label) {

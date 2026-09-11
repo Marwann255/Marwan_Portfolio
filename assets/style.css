@@ -112,8 +112,8 @@ section[id] {
 }
 
 .logo-mg {
-  -webkit-mask: url('/assets/logo_mg_transparent.png') no-repeat center / contain;
-  mask: url('/assets/logo_mg_transparent.png') no-repeat center / contain;
+  -webkit-mask: url('logo_mg_transparent.png') no-repeat center / contain;
+  mask: url('logo_mg_transparent.png') no-repeat center / contain;
 }
 
 @keyframes moveBeam {
