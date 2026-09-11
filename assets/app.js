@@ -762,27 +762,27 @@ window.closeProjectModal = function() {
 
 // 7. Interactive Visitor Wall
 var defaultWallNotes = [
+  // {
+  //   name: 'Ahmed Nabil',
+  //   role: 'Senior Flutter Engineer',
+  //   emoji: '🚀',
+  //   text: 'Marwan is an exceptionally dedicated Flutter developer! His clean architecture and state management in Evently were top notch.',
+  //   date: 'Aug 2026'
+  // },
   {
-    name: 'Ahmed Nabil',
-    role: 'Senior Flutter Engineer',
-    emoji: '🚀',
-    text: 'Marwan is an exceptionally dedicated Flutter developer! His clean architecture and state management in Evently were top notch.',
-    date: 'Aug 2026'
-  },
-  {
-    name: 'DEPI Mentor',
-    role: 'Digital Egypt Pioneers Initiative',
+    name: 'Marwan Gamal',
+    role: '',
     emoji: '⭐',
-    text: 'Outstanding problem solving and rapid mastery of cross-platform mobile engineering. Keep raising the bar!',
+    text: 'Leave something good',
     date: 'Aug 2026'
   },
-  {
-    name: 'Mohamed Osama',
-    role: 'Full-Stack Developer',
-    emoji: '🔥',
-    text: 'Loved collaborating on mobile modules. Solid Git workflow and reliable team player!',
-    date: 'Jul 2026'
-  }
+  // {
+  //   name: 'Mohamed Osama',
+  //   role: 'Full-Stack Developer',
+  //   emoji: '🔥',
+  //   text: 'Loved collaborating on mobile modules. Solid Git workflow and reliable team player!',
+  //   date: 'Jul 2026'
+  // }
 ];
 
 function initVisitorWall() {
