@@ -489,8 +489,8 @@ var projectData = {
     title: 'Evently — Event Discovery & Gathering Platform',
     category: 'Full-Stack Mobile App',
     timeline: 'Q3 2026',
-    description: 'A comprehensive, multi-theme event planning, booking, and social gathering mobile application engineered with Flutter, Dart, and Firebase backend. Provides end-to-end event discovery, real-time RSVP updates, interactive Google Maps venue integration, category filters, and bilingual localization (English & Arabic).',
-    stack: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Provider', 'Google Maps API', 'Localization (EN/AR)'],
+    description: 'A comprehensive, multi-theme event planning, booking, and social gathering mobile application engineered with Flutter, Dart, and Firebase backend. Provides end-to-end event discovery, real-time RSVP updates, category filters, and bilingual localization (English & Arabic).',
+    stack: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Provider', 'Localization (EN/AR)','Shared Prefrences Local DB'],
     github: 'https://github.com/Marwann255/evently-c19',
     features: [
       'Bilingual Support (Arabic & English) with dynamic RTL/LTR layout transitions.',
@@ -517,11 +517,11 @@ var projectData = {
     images: ["assets/images/space_app/Screenshot_20260705_005739.png","assets/images/space_app/Screenshot_20260705_005759.png","assets/images/space_app/Screenshot_20260705_005828.png","assets/images/space_app/Screenshot_20260705_005848.png","assets/images/space_app/Screenshot_20260705_005924.png"]
   },
   news: {
-    title: 'News C19 — High-Performance News Aggregator',
+    title: 'News — High-Performance News Aggregator',
     category: 'Media & News Application',
     timeline: 'Q1 2026',
     description: 'A production-grade mobile news reader consuming live RESTful news feeds. Built with Clean Architecture, custom caching layers, dynamic category switching, instant search, and adaptive layouts.',
-    stack: ['Flutter', 'Dart', 'RESTful APIs', 'Dio / Http', 'Clean Architecture', 'State Management'],
+    stack: ['Flutter', 'Dart', 'RESTful APIs', 'Dio / Http', 'Clean Architecture', 'Bloc / Cubit' ,'Hive Local DB'],
     github: 'https://github.com/Marwann255/news_c19',
     features: [
       'Real-time news feeds across Business, Tech, Science, Sports, Health, and Entertainment.',
