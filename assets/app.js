@@ -488,10 +488,10 @@ var projectData = {
   evently: {
     title: 'Evently — Event Discovery & Gathering Platform',
     category: 'Full-Stack Mobile App',
-    timeline: 'Q3 2026',
+    timeline: '2026',
     description: 'A comprehensive, multi-theme event planning, booking, and social gathering mobile application engineered with Flutter, Dart, and Firebase backend. Provides end-to-end event discovery, real-time RSVP updates, category filters, and bilingual localization (English & Arabic).',
     stack: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Provider', 'Localization (EN/AR)','Shared Prefrences Local DB'],
-    github: 'https://github.com/Marwann255/evently-c19',
+    github: 'https://github.com/Marwann255/Evently',
     features: [
       'Bilingual Support (Arabic & English) with dynamic RTL/LTR layout transitions.',
       'Custom Dark & Light Theme system with high-contrast event cards.',
@@ -504,7 +504,7 @@ var projectData = {
   space: {
     title: 'Space App — Solar System Planetary Explorer',
     category: 'Astrophysics Mobile Application',
-    timeline: 'Q2 2026',
+    timeline: '2025',
     description: 'An interactive astronomical mobile application built around the NASA Space Apps Challenge domain. Features a physics-calibrated swipeable 3D planet carousel, synchronized orbital telemetry (gravity, mass, distance from sun, orbital period), named-route transitions, and customized native Android/iOS splash branding.',
     stack: ['Flutter', 'Dart', 'Custom Animations', 'NASA Space Data', 'Named Routing', 'Vector UI'],
     github: 'https://github.com/Marwann255/Space-App',
@@ -519,10 +519,10 @@ var projectData = {
   news: {
     title: 'News — High-Performance News Aggregator',
     category: 'Media & News Application',
-    timeline: 'Q1 2026',
+    timeline: '2026',
     description: 'A production-grade mobile news reader consuming live RESTful news feeds. Built with Clean Architecture, custom caching layers, dynamic category switching, instant search, and adaptive layouts.',
     stack: ['Flutter', 'Dart', 'RESTful APIs', 'Dio / Http', 'Clean Architecture', 'Bloc / Cubit' ,'Hive Local DB'],
-    github: 'https://github.com/Marwann255/news_c19',
+    github: 'https://github.com/Marwann255/news',
     features: [
       'Real-time news feeds across Business, Tech, Science, Sports, Health, and Entertainment.',
       'Instant keyword search with debounced network calls.',
@@ -534,10 +534,24 @@ var projectData = {
   jacked: {
     title: 'Jacked — Workout Routine & Fitness Tracker',
     category: 'Fitness & Health Application',
-    timeline: 'Q4 2025',
+    timeline: '2026',
     description: 'A dedicated bodybuilding and fitness tracking application designed for workout routine creation, muscle group targeted logs, set & rep tracking, and historical performance charts.',
     stack: ['Flutter', 'Dart', 'Hive Local DB', 'Custom Charts', 'Responsive UI'],
-    github: 'https://github.com/Marwann255',
+    github: 'https://github.com/Marwann255/jacked',
+    features: [
+      'Custom workout split and routine builder for strength and bodybuilding.',
+      'Per-set weight & rep logging with automated rest timers.',
+      'Historical volume tracking and 1RM progression charts.',
+      'Completely offline-first with fast local database queries.'
+    ]
+  },
+  islami: {
+    title: 'Islami — Religious App',
+    category: 'Fitness & Health Application',
+    timeline: '2026',
+    description: 'A dedicated bodybuilding and fitness tracking application designed for workout routine creation, muscle group targeted logs, set & rep tracking, and historical performance charts.',
+    stack: ['Flutter', 'Dart', 'Hive Local DB', 'Custom Charts', 'Responsive UI'],
+    github: 'https://github.com/Marwann255/jacked',
     features: [
       'Custom workout split and routine builder for strength and bodybuilding.',
       'Per-set weight & rep logging with automated rest timers.',
@@ -651,7 +665,7 @@ window.openProjectModal = function(key) {
     '<div class="flex items-center justify-end gap-3 pt-4 border-t border-white/10">' +
       '<button onclick="closeProjectModal()" class="px-5 py-2.5 rounded-xl border border-white/10 text-sm font-medium text-slate-300 hover:bg-white/5 transition-colors cursor-pointer">Close</button>' +
       '<a href="' + p.github + '" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white text-sm font-semibold shadow-lg shadow-rose-500/25 transition-all">' +
-        '<i data-lucide="github" class="w-4 h-4"></i> View Source Repository' +
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.67 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.4-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg> View Source Repository' +
       '</a>' +
     '</div>';
 
