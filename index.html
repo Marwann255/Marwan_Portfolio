@@ -436,7 +436,7 @@
         <div class="spotlight-card md:col-span-6 lg:col-span-7 p-6 flex items-center">
           <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
             <div class="p-3 text-center">
-              <div class="text-3xl md:text-4xl font-extrabold font-display gradient-text-primary">5+</div>
+              <div class="text-3xl md:text-4xl font-extrabold font-display gradient-text-primary">6+</div>
               <div class="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">Apps &amp; Projects</div>
             </div>
             <div class="p-3 text-center">
@@ -450,10 +450,9 @@
           </div>
         </div>
 
-      </div>
         <!-- Card 4: Available For Work & CTA Card (Full Width 12 cols) -->
-        <!-- <div class="spotlight-card md:col-span-12 lg:col-span-12 p-7 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden"> -->
-          <div class="spotlight-card md:col-span-6 lg:col-span-12 p-7 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden">
+        <div class="spotlight-card md:col-span-12 lg:col-span-12 p-7 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden">
+          <!-- <div class="spotlight-card md:col-span-6 lg:col-span-12 p-7 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden"> -->
           <div class="relative z-10">
             <div class="flex items-center gap-2.5 mb-3">
               <span class="relative flex h-2.5 w-2.5">
@@ -462,7 +461,7 @@
               </span>
               <span class="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">Available For Work &amp; Freelance</span>
             </div>
-
+            
             <p class="text-2xl md:text-3xl lg:text-4xl font-extrabold font-display leading-tight">
               <span class="text-slate-400">HAVE A VISION?</span>
               <span class="gradient-text-primary">LET'S BUILD IT</span> <span class="text-slate-300 italic font-serif">together.</span>
@@ -474,13 +473,14 @@
               <i data-lucide="download" class="w-4 h-4"></i>
               <span>Download Resume</span>
             </a>
-
+            
             <a href="#contact" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-slate-300 hover:text-white transition-colors">
               <span>Start a conversation</span>
               <i data-lucide="arrow-right" class="w-4 h-4 text-rose-400"></i>
             </a>
           </div>
         </div>
+      </div>
 
     </section>
 
@@ -821,16 +821,16 @@
         </div>
 
         <!-- Project 2: Islami -->
-        <div class="project-item spotlight-card p-6 md:p-7 flex flex-col justify-between" data-category="mobile space">
+        <div class="project-item spotlight-card p-6 md:p-7 flex flex-col justify-between" data-category="mobile">
           <div>
             <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
-              <span class="text-purple-400 font-semibold">02 · Religious App</span>
+              <span class="text-purple-400 font-semibold">02 · Religious & Lifestyle Application</span>
               <span>2026</span>
             </div>
 
             <!-- <div class="h-44 rounded-2xl bg-gradient-to-tr from-purple-950/40 to-indigo-950/40 border border-white/5 flex items-center justify-center relative overflow-hidden mb-5 group"> -->
               <div class="h-49 rounded-2xl bg-gradient-to-tr from-rose-950/40 to-purple-950/40 border border-white/5 relative overflow-hidden mb-5 group">
-                <span class="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full
+                <!-- <span class="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full
                       border border-green-400/30 bg-green-400/10 px-2.5 py-1
                       text-[11px] font-semibold uppercase tracking-wide text-green-300 backdrop-blur">
                 <span class="relative flex h-1.5 w-1.5">
@@ -839,8 +839,8 @@
                 <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-400"></span>
             </span>
               In Progress
-            </span>
-              <img src="assets/images/islami/islami-project-cover-16x9.png" class="w-full h-full object-cover" alt="Evently cover" loading="lazy" />
+            </span> -->
+              <img src="assets/images/islami/islami-project-cover-16x9.png" class="w-full h-full object-cover" alt="Islami cover" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
               <div class="absolute inset-0 bg-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div class="absolute bottom-3 left-3 flex items-center gap-2 z-10">
@@ -851,22 +851,29 @@
               </div>
             </div>
 
-            <h3 class="text-xl font-bold text-white mb-2">Islami App</h3>
+            <h3 class="text-xl font-bold text-white mb-2">Islami — Quran & Hadith Companion</h3>
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
                A Flutter Islamic companion app. Browse all 114 suras with verse counts and Arabic names, and swipe through a carousel of Hadith cards. Works offline with bundled content and a custom dark-and-gold UI.
             </p>
             <div class="flex flex-wrap gap-1.5 mb-5 self-start justify-self-start">
-          <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20">Flutter</span>
-        </div>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20">Flutter</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Dart</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">SharedPreferences</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">carousel_slider</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">flutter_svg</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Native Splash & Launcher Icons</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Radio Player API</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Pray Time API</span>
+            </div>
           </div>
 
           <div>
             <div class="flex items-center justify-between pt-4 border-t border-white/10">
-              <!-- <button onclick="openProjectModal('space')" class="text-xs font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1 cursor-pointer">
+              <button onclick="openProjectModal('islami')" class="text-xs font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1 cursor-pointer">
                 <span>View Details &amp; Architecture</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-              </button> -->
-              <button></button>
+              </button>
+              <!-- <button></button> -->
              <a href="https://github.com/Marwann255/islami" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="GitHub Repo">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.67 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.4-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/>
@@ -930,7 +937,7 @@
         </div>
 
         <!-- Project 4: Jacked Fitness Tracker -->
-        <div class="project-item spotlight-card p-6 md:p-7 flex flex-col justify-between" data-category="mobile">
+        <div class="project-item spotlight-card p-6 md:p-7 flex flex-col justify-between" data-category="mobile fullstack">
           <div>
             <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
               <span class="text-amber-400 font-semibold">04 · Health &amp; Fitness</span>
@@ -985,7 +992,7 @@
           <div>
             <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
               <span class="text-purple-400 font-semibold">05 · Astrophysics App</span>
-              <span>2026</span>
+              <span>2025</span>
             </div>
 
             <!-- <div class="h-44 rounded-2xl bg-gradient-to-tr from-purple-950/40 to-indigo-950/40 border border-white/5 flex items-center justify-center relative overflow-hidden mb-5 group"> -->
@@ -1030,7 +1037,72 @@
           </div>
         </div>
 
-        
+          <!-- Project 6: Movies App -->
+        <div class="project-item spotlight-card p-6 md:p-7 flex flex-col justify-between" data-category="mobile fullstack">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
+              <span class="text-rose-400 font-semibold">06 · Movies App</span>
+              <span>2026</span>
+            </div>
+
+            <div class="h-49 rounded-2xl bg-gradient-to-tr from-rose-950/40 to-purple-950/40 border border-white/5 relative overflow-hidden mb-5 group">
+              <img src="assets/images/movies/movies-project-cover-16x9.png" class="w-full h-full object-cover" alt="Movies cover" loading="lazy" />
+              <span class="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full
+                      border border-green-400/30 bg-green-400/10 px-2.5 py-1
+                      text-[11px] font-semibold uppercase tracking-wide text-green-300 backdrop-blur">
+                <span class="relative flex h-1.5 w-1.5">
+                <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75
+                      animate-ping motion-reduce:animate-none"></span>
+                <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-400"></span>
+            </span>
+              In Progress
+            </span>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+              <div class="absolute inset-0 bg-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute bottom-3 left-3 flex items-center gap-2 z-10">
+                <!-- <div class="w-9 h-9 rounded-xl bg-rose-500/20 backdrop-blur-sm border border-rose-500/30 flex items-center justify-center text-rose-400 shadow-lg shadow-rose-500/10">
+                  <i data-lucide="calendar" class="w-4.5 h-4.5"></i>
+                </div> -->
+                <!-- <span class="font-display font-bold text-white text-base tracking-wide drop-shadow-lg">Evently</span> -->
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Movies App</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+             Browse movies, view details, and watch trailers with a Flutter app that uses the TMDB API. The app features a clean UI, search functionality, and a favorites list stored locally.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-rose-500/10 text-rose-300 border border-rose-500/20">Flutter</span>
+              <!-- <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Firebase</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Cloud FireStore</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Firebase Auth</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">UI/UX</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Theming</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Localization</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Provider</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Stream</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Future</span>
+              <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-slate-300 border border-white/10">Shared Prefrences Local DB</span> -->
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-white/10">
+              <!-- <button onclick="openProjectModal('evently')" class="text-xs font-semibold text-rose-400 hover:text-rose-300 flex items-center gap-1 cursor-pointer">
+                <span>View Details &amp; Architecture</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button> -->
+              <button></button>
+              <a href="" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="GitHub Repo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.67 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.4-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

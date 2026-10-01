@@ -543,21 +543,28 @@ var projectData = {
       'Per-set weight & rep logging with automated rest timers.',
       'Historical volume tracking and 1RM progression charts.',
       'Completely offline-first with fast local database queries.'
-    ]
+    ],
+    images:[]
   },
   islami: {
-    title: 'Islami — Religious App',
-    category: 'Fitness & Health Application',
+    title: 'Islami — Quran & Hadith Companion',
+    category: 'Religious & Lifestyle Application',
     timeline: '2026',
-    description: 'A dedicated bodybuilding and fitness tracking application designed for workout routine creation, muscle group targeted logs, set & rep tracking, and historical performance charts.',
-    stack: ['Flutter', 'Dart', 'Hive Local DB', 'Custom Charts', 'Responsive UI'],
-    github: 'https://github.com/Marwann255/jacked',
+    description: 'A Flutter app for reading Quran surahs and Hadith, with content bundled locally so it works offline. Features a dark theme, a carousel-based browsing UI, an Arabic custom font, and a native splash screen.',
+    stack: ['Flutter', 'Dart', 'SharedPreferences', 'carousel_slider', 'flutter_svg', 'Native Splash & Launcher Icons','Radio Player API','Pray Time API'],
+    github: 'https://github.com/Marwann255/islami',
     features: [
-      'Custom workout split and routine builder for strength and bodybuilding.',
-      'Per-set weight & rep logging with automated rest timers.',
-      'Historical volume tracking and 1RM progression charts.',
-      'Completely offline-first with fast local database queries.'
-    ]
+      'Browse and read Quran surahs from locally bundled asset files (offline).',
+      'Hadith section loaded from local assets.',
+      'Carousel-based navigation with SVG icons and a custom Arabic font (JannaLT).',
+      'Custom native splash screen (Android 12 compatible) and branded launcher icon.',
+      'Local persistence with SharedPreferences of last-read surah.' ,
+      'Sebha helps the user in tasbeh',
+      'Radio play Quran audio from diffrent Reciters',
+      'Pray Time browse Prayer Time and next prayer',
+      'Azkar browse and read Azkar'
+    ],
+    images:['assets/images/islami/Screenshot_20260928_213942.png','assets/images/islami/Screenshot_20261001_174214.png','assets/images/islami/Screenshot_20261001_174219.png','assets/images/islami/Screenshot_20261001_174224.png','assets/images/islami/Screenshot_20261001_174228.png','assets/images/islami/Screenshot_20260928_213925.png','assets/images/islami/Screenshot_20260928_213933.png','assets/images/islami/Screenshot_20261001_173149.png','assets/images/islami/Screenshot_20261001_174137.png','assets/images/islami/Screenshot_20261001_173626.png']
   }
 };
 
