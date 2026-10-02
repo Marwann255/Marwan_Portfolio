@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initSpotlightEffect();
   initNavScroll();
   initProjectFilters();
+  initCertificateFilters();
   // initVisitorWall();
   initContactForm();
   initMobileMenu();
@@ -781,6 +782,204 @@ window.closeProjectModal = function() {
   }
 };
 
+// 6.2. Certificates Data & Interactivity
+var certificateData = {
+  depi: {
+    title: 'Cross-Platform Mobile App Development',
+    issuer: 'Digital Egypt Pioneers Initiative (DEPI) · MCIT Egypt',
+    category: 'Mobile & Flutter',
+    issueDate: 'December 2026',
+    credentialId: 'DEPI-FLUTTER-2026-MG',
+    verifyUrl: '',
+    image: '', // Set image path here, e.g. 'assets/images/certificates/depi.png'
+    description: 'Intensive national specialization track sponsored by the Egyptian Ministry of Communications and Information Technology (MCIT). Focused on architecting scalable cross-platform mobile products using Flutter & Dart, enterprise state management (BLoC/Cubit & Provider), Cloud Firestore and Firebase Auth integration, clean code architecture, and agile product team collaboration.',
+    skills: ['Flutter', 'Dart', 'BLoC / Cubit', 'Provider', 'Clean Architecture', 'Firebase Auth', 'Cloud Firestore', 'Unit Testing', 'Git & Agile'],
+    status: 'Verified Credential'
+  },
+  route: {
+    title: 'Mobile Application Development Diploma',
+    issuer: 'Route Academy',
+    category: 'Mobile & Flutter',
+    issueDate: 'November 2026',
+    credentialId: 'ROUTE-DIP-2026-MG',
+    verifyUrl: '',
+    image: '', // Set image path here, e.g. 'assets/images/certificates/route.png'
+    description: 'Comprehensive software engineering diploma covering end-to-end mobile application architecture with Flutter and Dart. Curriculum encompasses complex UI implementation, RESTful API consumption with Dio and HTTP, offline-first local persistence with Hive and SharedPreferences, MVVM design pattern, and clean code principles.',
+    skills: ['Flutter', 'Dart', 'REST APIs', 'Dio / Http', 'MVVM Architecture', 'Hive Local DB', 'SharedPreferences', 'State Management'],
+    status: 'Verified Credential'
+  },
+  cypersecurity: {
+    title: 'HCIA-Security V4.0 Course',
+    issuer: 'Huawei',
+    category: 'Cybersecurity',
+    issueDate: '2026',
+    credentialId: 'HCIA-SECURITY-2026',
+    verifyUrl: '',
+    image: 'assets/certificates/HCIA-Security V4.0 Course.png',
+    description: 'HCIA-Security V4.0 (Huawei Certified ICT Associate – Security): A foundational network security course covering security concepts and standards, common threats and defenses, firewall security policies, NAT, hot standby, intrusion prevention, user authentication, encryption, PKI, and IPSec/SSL VPNs, with hands-on Huawei firewall configuration.',
+    skills: ['Network Security', 'Cybersecurity', 'Firewalls', 'Network Address Translation (NAT)', 'Virtual Private Network (VPN)', 'Host Intrusion Prevention', 'PKI','Encryption','User Authentication','Authorization','Accounting','Huawei USG Firewalls','Threat Detection & Prevention'],
+    status: 'Completed Track'
+  },
+  algorithms: {
+    title: 'Data Structures & Algorithmic Problem Solving',
+    issuer: 'Faculty of Computer Science / Academic Track',
+    category: 'Computer Science',
+    issueDate: '2025',
+    credentialId: 'CS-ALGO-2025-MG',
+    verifyUrl: '',
+    image: '',
+    description: 'Foundational computer science track covering advanced data structures (trees, graphs, heaps, hash tables), algorithmic strategies (greedy, divide & conquer, dynamic programming), asymptotic complexity analysis (Big-O notation), and object-oriented software design.',
+    skills: ['Algorithms', 'Data Structures', 'OOP Principles', 'Time Complexity (Big-O)', 'Problem Solving', 'Clean Code'],
+    status: 'Verified Credential'
+  }
+};
+
+function initCertificateFilters() {
+  var filterBtns = document.querySelectorAll('.cert-filter-btn');
+  var certCards = document.querySelectorAll('.cert-item');
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) {
+        b.classList.remove('active', 'bg-rose-500/20', 'border-rose-500/40', 'text-white');
+        b.classList.add('text-slate-400', 'border-white/10');
+      });
+      btn.classList.add('active', 'bg-rose-500/20', 'border-rose-500/40', 'text-white');
+      btn.classList.remove('text-slate-400', 'border-white/10');
+
+      var filter = btn.getAttribute('data-cert-filter');
+
+      certCards.forEach(function(card) {
+        var category = card.getAttribute('data-category') || '';
+        if (filter === 'all' || category === 'all' || category.indexOf(filter) !== -1) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+window.openCertificateModal = function(key) {
+  var cert = certificateData[key];
+  if (!cert) return;
+
+  var modal = document.getElementById('certificate-modal');
+  var modalContent = document.getElementById('certificate-modal-content');
+  if (!modal || !modalContent) return;
+
+  var skillsHtml = '';
+  cert.skills.forEach(function(s) {
+    skillsHtml += '<span class="px-2.5 py-1 text-xs font-mono rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-300">' + s + '</span>';
+  });
+
+  var previewHtml = '';
+  if (cert.image && cert.image.trim() !== '') {
+    previewHtml = 
+      '<div class="w-full max-h-150 rounded-2xl overflow-hidden border border-white/10 bg-black/40 mb-6 flex items-center justify-center p-2 shadow-2xl">' +
+        '<img src="' + cert.image + '" alt="' + cert.title + '" class="w-full h-auto max-h-88 object-contain rounded-xl" />' +
+      '</div>';
+  } else {
+    previewHtml = 
+      '<div class="relative rounded-2xl p-6 md:p-8 mb-6 border border-white/10 bg-gradient-to-br from-slate-900 via-rose-950/20 to-purple-950/20 overflow-hidden shadow-2xl">' +
+        '<div class="absolute -right-8 -top-8 w-40 h-40 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>' +
+        '<div class="absolute -left-8 -bottom-8 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>' +
+        '<div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">' +
+          '<div class="flex items-center gap-2">' +
+            '<span class="logo-mg block w-6 h-6" style="background-color: var(--accent-rose);"></span>' +
+            '<span class="font-display font-bold text-white text-xs tracking-wider">OFFICIAL CREDENTIAL CERTIFICATE</span>' +
+          '</div>' +
+          '<span class="text-[11px] font-mono text-emerald-400 flex items-center gap-1 font-semibold">' +
+            '<i data-lucide="badge-check" class="w-3.5 h-3.5"></i> ' + cert.status +
+          '</span>' +
+        '</div>' +
+        '<div class="text-center py-4">' +
+          '<p class="text-[11px] uppercase tracking-widest font-mono text-slate-400 mb-1">This certificate recognizes that</p>' +
+          '<h4 class="text-2xl md:text-3xl font-bold font-serif-title text-white tracking-wide mb-2">Marwan Gamal</h4>' +
+          '<p class="text-xs text-slate-300 max-w-md mx-auto mb-3">has successfully fulfilled all requirements, assessments, and milestones for</p>' +
+          '<p class="text-base md:text-lg font-bold font-display text-rose-300 mb-3">' + cert.title + '</p>' +
+          '<p class="text-xs font-mono text-slate-400">Awarded by <span class="text-slate-200 font-semibold">' + cert.issuer + '</span></p>' +
+        '</div>' +
+        '<div class="flex flex-col sm:flex-row items-center justify-between gap-2 pt-4 border-t border-white/10 text-xs font-mono text-slate-400">' +
+          '<span>Credential ID: <strong class="text-slate-200">' + cert.credentialId + '</strong></span>' +
+          '<span>Issued: ' + cert.issueDate + '</span>' +
+        '</div>' +
+      '</div>';
+  }
+
+  var verifyBtnHtml = '';
+  if (cert.verifyUrl && cert.verifyUrl !== '#' && cert.verifyUrl.trim() !== '') {
+    verifyBtnHtml = 
+      '<a href="' + cert.verifyUrl + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white text-xs font-semibold shadow-lg shadow-rose-500/25 transition-all">' +
+        '<i data-lucide="external-link" class="w-3.5 h-3.5"></i> Verify Credential' +
+      '</a>';
+  }
+
+  modalContent.innerHTML = 
+    '<div class="flex items-start justify-between gap-4 mb-4 border-b border-white/10 pb-4">' +
+      '<div>' +
+        '<div class="flex items-center gap-2 mb-1">' +
+          '<span class="text-xs font-mono uppercase tracking-widest text-rose-400 font-semibold">' + cert.category + ' · ' + cert.issueDate + '</span>' +
+          '<span class="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono font-semibold">' + cert.status + '</span>' +
+        '</div>' +
+        '<h3 class="text-xl md:text-2xl font-bold text-white mt-1">' + cert.title + '</h3>' +
+        '<p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5"><i data-lucide="award" class="w-3.5 h-3.5 text-rose-400"></i> ' + cert.issuer + '</p>' +
+      '</div>' +
+      '<button onclick="closeCertificateModal()" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all cursor-pointer">' +
+        '<i data-lucide="x" class="w-5 h-5"></i>' +
+      '</button>' +
+    '</div>' +
+    previewHtml +
+    '<div class="mb-5">' +
+      '<h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-2">' +
+        '<i data-lucide="book-open" class="w-3.5 h-3.5 text-rose-400"></i> About This Milestone' +
+      '</h4>' +
+      '<p class="text-slate-300 text-sm leading-relaxed">' + cert.description + '</p>' +
+    '</div>' +
+    '<div class="mb-6">' +
+      '<h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-2">' +
+        '<i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400"></i> Validated Competencies' +
+      '</h4>' +
+      '<div class="flex flex-wrap gap-2">' + skillsHtml + '</div>' +
+    '</div>' +
+    '<div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/10">' +
+      // '<button onclick="copyCredentialId(\'' + cert.credentialId + '\')" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-300 hover:text-white flex items-center gap-2 transition-colors cursor-pointer">' +
+      //   '<i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Credential ID' +
+      // '</button>' +
+      '<button></button>'+
+      '<div class="flex items-center gap-2">' +
+        '<button onclick="closeCertificateModal()" class="px-5 py-2 rounded-xl border border-white/10 text-xs font-medium text-slate-300 hover:bg-white/5 transition-colors cursor-pointer">Close</button>' +
+        verifyBtnHtml +
+      '</div>' +
+    '</div>';
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  if (window.lucide) lucide.createIcons();
+};
+
+window.closeCertificateModal = function() {
+  var modal = document.getElementById('certificate-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+};
+
+window.copyCredentialId = function(id) {
+  if (!id) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(id).then(function() {
+      showToast('Credential ID copied: ' + id);
+    }).catch(function() {
+      showToast('ID: ' + id);
+    });
+  } else {
+    showToast('ID: ' + id);
+  }
+};
+
 // 7. Interactive Visitor Wall
 // var defaultWallNotes = [
   // {
@@ -1106,90 +1305,100 @@ function escapeHtml(str) {
 }
 
 // 10. Page-by-Page Smart Section Scrolling (Wheel & Keyboard Navigation)
-function initPageByPageScroll() {
-  var sections = Array.from(document.querySelectorAll('section[id]'));
-  if (sections.length === 0) return;
+// function initPageByPageScroll() {
+//   var sections = Array.from(document.querySelectorAll('section[id]'));
+//   if (sections.length === 0) return;
 
-  var isAnimating = false;
-  var scrollCooldownTimer = null;
+//   var isAnimating = false;
+//   var scrollCooldownTimer = null;
 
-  function getCurrentSectionIndex() {
-    var scrollY = window.pageYOffset + 140;
-    var currentIndex = 0;
-    for (var i = 0; i < sections.length; i++) {
-      if (scrollY >= sections[i].offsetTop) {
-        currentIndex = i;
-      }
-    }
-    return currentIndex;
-  }
+//   function getCurrentSectionIndex() {
+//     var scrollY = window.pageYOffset + 140;
+//     var currentIndex = 0;
+//     for (var i = 0; i < sections.length; i++) {
+//       if (scrollY >= sections[i].offsetTop) {
+//         currentIndex = i;
+//       }
+//     }
+//     return currentIndex;
+//   }
 
-  function scrollToSection(index) {
-    if (index < 0 || index >= sections.length) return;
-    isAnimating = true;
+//   function scrollToSection(index) {
+//     if (index < 0 || index >= sections.length) return;
+//     isAnimating = true;
 
-    var targetTop = sections[index].offsetTop;
-    if (index === 0) targetTop = 0;
+//     var targetTop = sections[index].offsetTop;
+//     if (index === 0) targetTop = 0;
 
-    window.scrollTo({
-      top: targetTop,
-      behavior: 'smooth'
-    });
+//     window.scrollTo({
+//       top: targetTop,
+//       behavior: 'smooth'
+//     });
 
-    clearTimeout(scrollCooldownTimer);
-    scrollCooldownTimer = setTimeout(function() {
-      isAnimating = false;
-    }, 750);
-  }
+//     clearTimeout(scrollCooldownTimer);
+//     scrollCooldownTimer = setTimeout(function() {
+//       isAnimating = false;
+//     }, 750);
+//   }
 
-  // Intercept Mouse Wheel for smooth page-by-page stepping
-  window.addEventListener('wheel', function(e) {
-    // Disable if modal is open
-    var modal = document.getElementById('project-modal');
-    if (modal && !modal.classList.contains('hidden')) return;
+//   // Intercept Mouse Wheel for smooth page-by-page stepping
+//   window.addEventListener('wheel', function(e) {
+//     // Disable if any modal is open
+//     var modal = document.getElementById('project-modal');
+//     if (modal && !modal.classList.contains('hidden')) return;
+//     var certModal = document.getElementById('certificate-modal');
+//     if (certModal && !certModal.classList.contains('hidden')) return;
 
-    var delta = e.deltaY;
-    if (Math.abs(delta) < 20) return; // ignore subtle trackpad jitter
+//     var delta = e.deltaY;
+//     if (Math.abs(delta) < 20) return; // ignore subtle trackpad jitter
 
-    var currentIndex = getCurrentSectionIndex();
-    var currentSection = sections[currentIndex];
-    var rect = currentSection.getBoundingClientRect();
-    var vh = window.innerHeight;
+//     var currentIndex = getCurrentSectionIndex();
+//     var currentSection = sections[currentIndex];
+//     var rect = currentSection.getBoundingClientRect();
+//     var vh = window.innerHeight;
 
-    if (isAnimating) {
-      e.preventDefault();
+//     if (isAnimating) {
+//       e.preventDefault();
+//       return;
+//     }
+
+//     // Scrolling DOWN
+//     if (delta > 0) {
+//       // If bottom of current section is still below viewport, let natural scroll finish section first
+//       if (rect.bottom > vh + 60) {
+//         return;
+//       }
+//       if (currentIndex < sections.length - 1) {
+//         e.preventDefault();
+//         scrollToSection(currentIndex + 1);
+//       }
+//     }
+//     // Scrolling UP
+//     else {
+//       // If top of current section is still above viewport, let natural scroll move to top
+//       if (rect.top < -60) {
+//         return;
+//       }
+//       if (currentIndex > 0) {
+//         e.preventDefault();
+//         scrollToSection(currentIndex - 1);
+//       }
+//     }
+//   }, { passive: false });
+
+  // Keyboard navigation support (Arrow keys, Page Up/Down, ESC to close modal)
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (typeof closeProjectModal === 'function') closeProjectModal();
+      if (typeof closeCertificateModal === 'function') closeCertificateModal();
       return;
     }
 
-    // Scrolling DOWN
-    if (delta > 0) {
-      // If bottom of current section is still below viewport, let natural scroll finish section first
-      if (rect.bottom > vh + 60) {
-        return;
-      }
-      if (currentIndex < sections.length - 1) {
-        e.preventDefault();
-        scrollToSection(currentIndex + 1);
-      }
-    }
-    // Scrolling UP
-    else {
-      // If top of current section is still above viewport, let natural scroll move to top
-      if (rect.top < -60) {
-        return;
-      }
-      if (currentIndex > 0) {
-        e.preventDefault();
-        scrollToSection(currentIndex - 1);
-      }
-    }
-  }, { passive: false });
-
-  // Keyboard navigation support (Arrow keys, Page Up/Down)
-  window.addEventListener('keydown', function(e) {
     if (['INPUT', 'TEXTAREA', 'SELECT'].indexOf(document.activeElement.tagName) !== -1) return;
     var modal = document.getElementById('project-modal');
     if (modal && !modal.classList.contains('hidden')) return;
+    var certModal = document.getElementById('certificate-modal');
+    if (certModal && !certModal.classList.contains('hidden')) return;
 
     var currentIndex = getCurrentSectionIndex();
     if (e.key === 'ArrowDown' || e.key === 'PageDown') {
@@ -1204,4 +1413,4 @@ function initPageByPageScroll() {
       }
     }
   });
-}
+// }
