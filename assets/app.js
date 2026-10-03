@@ -507,7 +507,7 @@ var projectData = {
     category: 'Astrophysics Mobile Application',
     timeline: '2025',
     description: 'An interactive astronomical mobile application built around the NASA Space Apps Challenge domain. Features a physics-calibrated swipeable 3D planet carousel, synchronized orbital telemetry (gravity, mass, distance from sun, orbital period), named-route transitions, and customized native Android/iOS splash branding.',
-    stack: ['Flutter', 'Dart', 'Custom Animations', 'NASA Space Data', 'Named Routing', 'Vector UI'],
+    stack: ['Flutter', 'Dart', 'Custom Animations', 'NASA Space Data', 'Named Routing', 'Vector UI','3D Models'],
     github: 'https://github.com/Marwann255/Space-App',
     features: [
       'Interactive swipeable planetary carousel with synchronized data telemetry.',
@@ -632,10 +632,15 @@ window.openProjectModal = function(key) {
         '</div>';
     });
 
-    var dotsHtml = '';
-    images.forEach(function(_, i) {
-      dotsHtml += '<button onclick="goToProjectImage(' + i + ')" data-dot-index="' + i + '" class="w-1.5 h-1.5 rounded-full transition-all ' + (i === 0 ? 'bg-rose-400 w-4' : 'bg-white/30 hover:bg-white/50') + '"></button>';
-    });
+var perView = 3;
+var maxIndex = Math.max(0, images.length - perView); // 3
+
+var dotsHtml = '';
+for (var i = 0; i <= maxIndex; i++) {
+  dotsHtml += '<button onclick="goToProjectImage(' + i + ')" data-dot-index="' + i +
+    '" aria-label="Go to position ' + (i + 1) + '" class="h-1.5 rounded-full transition-all ' +
+    (i === 0 ? 'bg-rose-400 w-4' : 'w-1.5 bg-white/30 hover:bg-white/50') + '"></button>';
+}
 
     galleryHtml =
   '<div class="mb-6">' +
